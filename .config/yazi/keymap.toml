@@ -1,0 +1,7 @@
+# Extra bindings, added in front of yazi's defaults.
+
+# Maximise / restore the preview (toggle-pane.yazi plugin)
+[[mgr.prepend_keymap]]
+on   = "T"
+run  = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"

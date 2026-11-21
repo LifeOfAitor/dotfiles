@@ -1,0 +1,40 @@
+# Only what differs from yazi's defaults.
+# Everything else (keymap, openers, previewers…) comes from yazi and updates with it.
+# Defaults: https://github.com/sxyazi/yazi/tree/main/yazi-config/preset
+
+[mgr]
+show_hidden = true
+# Column widths: parent, current, preview (default [1, 4, 3])
+ratio       = [1, 3, 4]
+# Natural sort: file2 before file10
+sort_by     = "natural"
+# Show the size next to each file
+linemode    = "size"
+
+[preview]
+# Wrap long lines instead of cutting them
+wrap       = "yes"
+# Higher-resolution images (the preview is wider and can be maximised with T)
+max_width  = 1200
+max_height = 1800
+
+# Rendered Markdown preview with mdv (mdv-previewer.yazi plugin)
+# Needs mdv on the PATH: cargo install --root ~/.local mdv
+[[plugin.prepend_previewers]]
+url = "*.{md,markdown}"
+run = "mdv-previewer"
+
+[[plugin.prepend_preloaders]]
+url = "*.{md,markdown}"
+run = "mdv-previewer"
+
+# Git status in the file list (git.yazi plugin)
+[[plugin.prepend_fetchers]]
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+url   = "*/"
+run   = "git"
+group = "git"

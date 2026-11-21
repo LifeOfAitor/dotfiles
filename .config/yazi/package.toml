@@ -1,0 +1,24 @@
+[[plugin.deps]]
+use = "WhoSowSee/mdv-previewer"
+rev = "284236d"
+hash = "69d35ef88c8094748a1030aab6aacd61"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "1ef5fe0"
+hash = "5b2fbef7d1513ce38ff72623a071a5e"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "1ef5fe0"
+hash = "347cc6b190eb0c2fd60513cc7ae37412"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "1ef5fe0"
+hash = "17ebde15c4349f90aedbc45984b98db2"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-frappe"
+rev = "1183892"
+hash = "ab7c71d442d3a9e16331ea0d95ab36a8"

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Runs after every `git pull` (merge or fast-forward).
+# install.sh enables it with: git config core.hooksPath .githooks
+
+DOTFILES="$(git rev-parse --show-toplevel)"
+
+# Files changed by the pull
+changed="$(git diff --name-only ORIG_HEAD HEAD 2>/dev/null || true)"
+
+echo "==> Applying dotfiles"
+"$DOTFILES/scripts/link.sh"
+
+if grep -q '^\.config/yazi/package\.toml$' <<<"$changed" && command -v ya &>/dev/null; then
+  echo "==> yazi packages changed, installing"
+  ya pkg install
+fi
+
+if grep -q '^Brewfile$' <<<"$changed"; then
+  echo -e "\033[1;33m==> The Brewfile changed. Run: brew bundle --file=\"$DOTFILES/Brewfile\"\033[0m"
+fi
+
+if grep -q '^\.zshrc$' <<<"$changed"; then
+  echo -e "\033[1;33m==> .zshrc changed. Run: exec zsh\033[0m"
+fi
+
+exit 0
