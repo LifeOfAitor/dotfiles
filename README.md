@@ -147,11 +147,11 @@ p10k configure                # optional: design your own prompt
 ~/dotfiles
 ├── .zshrc                 zsh + Oh My Zsh + p10k, fzf, zoxide, eza, thefuck, the `y` function
 ├── .p10k.zsh              Powerlevel10k prompt
-├── .tmux.conf             mouse, easy splits, vi copy mode, Catppuccin status bar
 ├── .gitconfig             rebase on pull, gh credentials, includes ~/.gitconfig.local
 ├── .vimrc                 a tiny fallback for plain Vim
 ├── .config/
 │   ├── kitty/             Meslo Nerd Font, blurred translucent background, powerline tabs
+│   ├── tmux/              mouse, easy splits, vi copy mode, Catppuccin status bar
 │   ├── yazi/              only what differs from the defaults, plus four plugins
 │   ├── neofetch/          an ASCII cat and a clean info layout
 │   ├── htop/              process monitor layout
@@ -300,7 +300,7 @@ Anything that belongs to one machine lives in files that git ignores, so your se
 
 | Want to change… | Do this |
 |---|---|
-| 🎨 The kitty theme | `kitten themes`. For tmux and yazi, edit the colours in `.tmux.conf` and `.config/yazi/theme.toml` |
+| 🎨 The kitty theme | `kitten themes`. For tmux and yazi, edit the colours in `.config/tmux/tmux.conf` and `.config/yazi/theme.toml` |
 | 💬 The prompt | `p10k configure` |
 | 🔤 The font | `font_family` in `.config/kitty/kitty.conf`, plus `./scripts/install-nerd-fonts.sh` for 50+ Nerd Fonts |
 | 🐱 The ASCII cat | `.config/neofetch/cat.txt` |

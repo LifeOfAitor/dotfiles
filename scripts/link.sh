@@ -20,7 +20,7 @@ LINKS=(
   ".p10k.zsh:.p10k.zsh"
   ".gitconfig:.gitconfig"
   ".vimrc:.vimrc"
-  ".tmux.conf:.tmux.conf"
+  ".config/tmux:.config/tmux"
   ".config/kitty:.config/kitty"
   ".config/htop:.config/htop"
   ".config/neofetch:.config/neofetch"
@@ -28,10 +28,30 @@ LINKS=(
   ".config/yazi:.config/yazi"
 )
 
+# Old locations that would shadow the new ones (tmux reads ~/.tmux.conf
+# before ~/.config/tmux/tmux.conf), moved to the backup folder
+LEGACY=(
+  ".tmux.conf"
+)
+
 # ----------------------------
 # Link
 # ----------------------------
 changed=0
+
+for old in "${LEGACY[@]}"; do
+  if [[ -e "$HOME/$old" || -L "$HOME/$old" ]]; then
+    changed=1
+    if (( DRY_RUN )); then
+      echo "   -> [dry-run] would move ~/$old to the backup folder"
+      continue
+    fi
+    mkdir -p "$BACKUP_DIR"
+    mv "$HOME/$old" "$BACKUP_DIR/$old"
+    echo "   -> Moved old ~/$old to $BACKUP_DIR (it would override the new config)"
+  fi
+done
+
 for entry in "${LINKS[@]}"; do
   src="$DOTFILES/${entry%%:*}"
   dst="$HOME/${entry#*:}"

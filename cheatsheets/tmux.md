@@ -85,7 +85,7 @@ The mouse wheel takes you straight in. From the keyboard:
 
 | Key | What it does |
 |---|---|
-| `P r` | Reload `~/.tmux.conf` (*this config*) |
+| `P r` | Reload `~/.config/tmux/tmux.conf` (*this config*) |
 | `P :` | tmux command prompt (e.g. `:kill-session`) |
 | `P t` | Big clock (yes, mostly useless) |
 
@@ -106,7 +106,7 @@ Same over SSH: `ssh server`, `tmux new -s something`, start whatever, `P d`, dis
 
 Idea: a quiet corner that grows while you work, with `tmux split-window -h -l 32 'txoko --work'` (see [txoko.md](txoko.md)).
 
-## This config (`.tmux.conf`)
+## This config (`.config/tmux/tmux.conf`)
 
 Linked by `scripts/link.sh`. What it changes from the defaults:
 
