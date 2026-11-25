@@ -36,7 +36,7 @@ Lost? `~` or `F1` opens the help (type to filter).
 
 | Key | What it does |
 |---|---|
-| `Enter` / `o` | Open with the default app |
+| `Enter` / `o` | Open: text and code in **nvim**, everything else (images, PDFs...) in its app. Quit nvim (`:q`) to get back to yazi |
 | `O` | Choose what to open it with |
 
 ## Selecting
@@ -127,7 +127,7 @@ Only what differs from the defaults is kept in the repo:
 
 | File | What it changes |
 |---|---|
-| `yazi.toml` | Hidden files shown · columns `ratio = [1, 3, 4]` (the preview is the widest; default `[1, 4, 3]`) · natural sort · size next to each file · wrapped preview lines · images up to 1200×1800 |
+| `yazi.toml` | Text and code open in nvim with `Enter` · hidden files shown · columns `ratio = [1, 3, 4]` (the preview is the widest; default `[1, 4, 3]`) · natural sort · size next to each file · wrapped preview lines · images up to 1200×1800 |
 | `theme.toml` | Catppuccin Frappé theme |
 | `init.lua` | Sets up the plugins (rounded borders, git, mdv theme) |
 | `keymap.toml` | `T` to maximise the preview |

@@ -18,6 +18,17 @@ wrap       = "yes"
 max_width  = 1200
 max_height = 1800
 
+# Enter (or `o`) opens text and code in nvim ($EDITOR); `O` to pick another app.
+# yazi already does this for text/*, but this also covers JSON, empty files
+# and anything macOS doesn't recognise as text.
+[[open.prepend_rules]]
+mime = "{text/*,inode/empty,inode/x-empty,application/{json,ndjson,toml,yaml,x-yaml,xml,javascript,x-sh,x-shellscript,sql}}"
+use  = ["edit", "reveal"]
+
+[[open.prepend_rules]]
+url = "*.{md,markdown,txt,toml,yaml,yml,json,jsonc,lua,conf,cfg,ini,env,sh,zsh,bash,fish,py,js,ts,jsx,tsx,html,css,scss,rs,go,java,c,h,cpp,swift,kt,sql,csv,log,lock,xml,vim}"
+use = ["edit", "reveal"]
+
 # Rendered Markdown preview with mdv (mdv-previewer.yazi plugin)
 # Needs mdv on the PATH: cargo install --root ~/.local mdv
 [[plugin.prepend_previewers]]
